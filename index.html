@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Real-Time Weather Dashboard</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="dashboard">
+    <header class="dashboard__header">
+      <div>
+        <h1>Indian Weather Dashboard</h1>
+        <p>Live weather from WeatherAPI with colorful sun, rain, wind, and sky visuals.</p>
+      </div>
+      <form id="search-form" class="search-form" aria-label="Search weather by city">
+        <label for="city-input">City or Location</label>
+        <input id="city-input" name="city" type="text" placeholder="Enter city name" required />
+        <button type="submit">Search</button>
+      </form>
+    </header>
+
+    <section id="status" class="status" aria-live="polite"></section>
+
+    <section id="weather-visual" class="weather-visual hidden" aria-live="polite">
+      <div class="weather-hero">
+        <div class="weather-scene" id="weather-scene"></div>
+        <div class="weather-badge">
+          <img id="weather-icon" class="weather-icon" alt="Weather icon" />
+          <div class="weather-details">
+            <strong id="weather-condition"></strong>
+            <p id="weather-summary"></p>
+          </div>
+        </div>
+      </div>
+      <div class="weather-tagline" id="weather-tagline"></div>
+    </section>
+
+    <section id="weather-cards" class="cards hidden">
+      <article class="card">
+        <h2>Current Conditions</h2>
+        <p><strong id="location"></strong></p>
+        <p id="description"></p>
+      </article>
+      <article class="card">
+        <h2>Temperature</h2>
+        <p><span id="temperature"></span></p>
+        <p class="meta">Feels like <span id="apparent-temperature"></span></p>
+      </article>
+      <article class="card">
+        <h2>Humidity</h2>
+        <p><span id="humidity"></span></p>
+      </article>
+      <article class="card">
+        <h2>Wind</h2>
+        <p>Speed: <span id="wind-speed"></span></p>
+        <p>Direction: <span id="wind-direction"></span></p>
+      </article>
+    </section>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
